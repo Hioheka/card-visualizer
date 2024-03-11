@@ -20,19 +20,7 @@ Click the "Visualize" button.
 
 ## Customization
 
-You can customize the project's visualization options by changing the styles variable in the app.component.ts file.
-You can change the color, font, and size of the visualization by changing the CSS properties in this variable.
-Example:
-
-    const styles = {
-      card: {
-        backgroundColor: '#ffffff',
-        color: '#000000',
-        fontSize: '16px',
-        fontFamily: 'Arial',
-      },
-      ...
-    };
+You can change the photos of the front and back faces. You can customize the project according to the card type you want by updating the style file or mock data.
 
 ## Notes
 
