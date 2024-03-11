@@ -1,0 +1,25 @@
+@mixin inner-photo-selector($height, $width) {
+  height: $height;
+  width: $width;
+}
+
+.inner-photo {
+  @include inner-photo-selector(37rem, 36rem);
+}
+
+.inner-signature {
+  @include inner-photo-selector(25rem, 48rem);
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: bold;
+}

@@ -1,0 +1,139 @@
+<mat-toolbar color="primary">
+  <span>Identity Card Visualizer</span>
+</mat-toolbar>
+<div class="button-container">
+  <button mat-raised-button color="basic" (click)="FlipParse()">Flip</button>
+</div>
+<form [formGroup]="visualizerForm">
+  <section class="cc-wrapper">
+    <div class="cc-box">
+      <div #ccBoxFlip class="cc-box--flip">
+        <div class="cc-box__front"
+          [ngStyle]="(!($isFlipParser.value))?{'transform': 'rotateY(180deg)','transform-style': 'preserve-3d','transition': '1s'} : {'transform': 'rotateY(0deg)','transform-style': 'preserve-3d','transition': '1s'}">
+          <div class="cc-box__logo">
+          </div>
+          <div class="front-wrapper">
+            <div style="float:left;
+          width:30%;
+          height:280px;">
+              <div class="cc-box__element" style="margin-top: 1.5rem;">
+                <label class="cc-form__label" for="cc-holder-display">Identity Number</label>
+                <input class="cc-form__input cc-form__input--transparent cc-form__input--tckn"
+                  aria-label="Payment card number" style="margin-left: .7rem;" [disabled]="true"
+                  formControlName="identityNumber">
+              </div>
+              <div class="photo" *ngIf="visualizerForm.value.imageData !== ''">
+                <img src='data:image/png;base64,{{visualizerForm.value.imageData}}' class="photo" (click)="openPhotoZoomDialog('photo')"/>
+              </div>
+            </div>
+            <div style="float:left;
+          width:32%;
+          height:280px;">
+              <div style="height:3rem;"></div>
+              <div class="cc-box__element">
+                <label class="cc-form__label" for="cc-holder-display">Surname</label>
+                <input class="cc-form__input cc-form__input--transparent cc-form__input--tckn"
+                  aria-label="Payment card number" [disabled]="true" formControlName="surname">
+              </div>
+              <div class="cc-box__element">
+                <label class="cc-form__label" for="cc-holder-display">Given Name(s)</label>
+                <input class="cc-form__input cc-form__input--transparent cc-form__input--tckn"
+                  aria-label="Payment card number" [disabled]="true" formControlName="name">
+              </div>
+              <div class="cc-box__element">
+                <label class="cc-form__label" for="cc-holder-display">Date of Birth</label>
+                <input class="cc-form__input cc-form__input--transparent cc-form__input--floatingInput"
+                  aria-label="Payment card number" [disabled]="true" formControlName="dateOfBirth">
+              </div>
+              <div class="cc-box__element">
+                <label class="cc-form__label" for="cc-holder-display">Document No</label>
+                <input class="cc-form__input cc-form__input--transparent cc-form__input--tckn"
+                  aria-label="Payment card number" [disabled]="true" formControlName="serialNumber">
+              </div>
+              <div class="cc-box__element">
+                <label class="cc-form__label" for="cc-holder-display">Valid Until</label>
+                <input class="cc-form__input cc-form__input--transparent cc-form__input--tckn"
+                  aria-label="Payment card number" [disabled]="true" formControlName="validUntil">
+              </div>
+            </div>
+            <div style="float:right;
+          width:38%;
+          height:280px;">
+              <div style="height:6.4rem;"></div>
+              <div class="cc-box__element">
+                <label class="cc-form__label" for="cc-holder-display">Gender</label>
+                <input class="cc-form__input cc-form__input--transparent cc-form__input--floatingInput"
+                  aria-label="Payment card number" [disabled]="true" formControlName="gender">
+              </div>
+              <div class="cc-box__element">
+                <label class="cc-form__label" for="cc-holder-display">Nationality</label>
+                <input class="cc-form__input cc-form__input--transparent cc-form__input--floatingInput"
+                  aria-label="Payment card number" [disabled]="true" formControlName="nationality">
+              </div>
+              <div class="cc-box__element">
+                <label class="cc-form__label" for="cc-holder-display">Signature</label>
+                <input class="cc-form__input cc-form__input--transparent cc-form__input--floatingInput"
+                  aria-label="Payment card number" [disabled]="true">
+                  <div class="signature-photo" *ngIf="visualizerForm.value.signature !== ''">
+                <img src='data:image/png;base64,{{visualizerForm.value.signature}}' class="signature-photo" (click)="openPhotoZoomDialog('signature')" />
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cc-box__back"
+          [ngStyle]="$isFlipParser.value?{'transform': 'rotateY(180deg)','transform-style': 'preserve-3d','transition': '1s'} : {'transform': 'rotateY(0deg)','transform-style': 'preserve-3d','transition': '1s'}">
+          <div class="back-wrapper">
+            <div class="back-fields-area">
+              <div style="float:right; width:20%; transform: rotate(90deg); margin-top: 2rem;">
+                <div style="float:right; width:75%;"><input
+                    class="cc-form__input cc-form__input--transparent cc-form__input--floatingInput"
+                    aria-label="Payment card number" [disabled]="true" style="margin-left: .3rem;"
+                    formControlName="pen"></div>
+                <div style="float:right; width:25%;"><label class="cc-form__label" for="cc-holder-display"
+                    style="font-size: .7em; margin-right: .6rem ;">PEN</label>
+                </div>
+                <div class="cc-box__element">
+                </div>
+              </div>
+              <div style="float:right; width: 80%;">
+                <div class="cc-box__element">
+                  <label class="cc-form__label" for="cc-holder-display">Mother's Name</label>
+                  <input class="cc-form__input cc-form__input--transparent cc-form__input--floatingInput"
+                    aria-label="Payment card number" [disabled]="true" formControlName="motherName">
+                </div>
+                <div class="cc-box__element">
+                  <label class="cc-form__label" for="cc-holder-display">Father's Name</label>
+                  <input class="cc-form__input cc-form__input--transparent cc-form__input--floatingInput"
+                    aria-label="Payment card number" [disabled]="true" formControlName="fatherName">
+                </div>
+                <div class="cc-box__element">
+                  <label class="cc-form__label" for="cc-holder-display">Issued By</label>
+                  <input class="cc-form__input cc-form__input--transparent cc-form__input--floatingInput"
+                    aria-label="Payment card number" [disabled]="true" formControlName="issuedBy">
+                </div>
+              </div>
+            </div>
+            <div class="mrz-area">
+              <div class="cc-box__element">
+                <input class="cc-form__input cc-form__input--transparent cc-form__input--floatingInput"
+                  style="font-weight: bold; margin-top: 1rem;" aria-label="Payment card number" [disabled]="true"
+                  formControlName="mrz1">
+                <input class="cc-form__input cc-form__input--transparent cc-form__input--floatingInput"
+                  style="font-weight: bold;" aria-label="Payment card number" [disabled]="true"
+                  formControlName="mrz2">
+                <input class="cc-form__input cc-form__input--transparent cc-form__input--floatingInput"
+                  style="font-weight: bold;" aria-label="Payment card number" [disabled]="true"
+                  formControlName="mrz3">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</form>
+
+<mat-toolbar color="primary" class="footer">
+  <span>© 2024 Identity Card Visualizer Angular App. All rights reserved.</span>
+</mat-toolbar>

@@ -1,0 +1,6 @@
+<header>
+  <h1>{{data.caption}}</h1>
+</header>
+<div class="photo-container">
+  <img src="data:image/png;base64,{{ data.photo }}" alt="Zoomed Photo" [ngClass]="{ 'inner-photo': data.fileType === 1, 'inner-signature': data.fileType === 2 }" />
+</div>

@@ -1,0 +1,469 @@
+// Visualize Begin
+@import "./style/manifest.scss";
+
+.cc-form {
+  align-items: center;
+  // display: flex;
+  flex-flow: column;
+  flex-wrap: wrap;
+  height: 100%;
+  justify-content: center;
+  width: 100%;
+
+  &--inline {
+    align-items: inherit;
+    display: inherit;
+    flex-flow: row;
+    flex-wrap: inherit;
+    height: 100%;
+    justify-content: flex-end;
+    margin-bottom: $small-margin;
+    width: 100%;
+
+    // @include breakpoint(tablet) {
+    //   align-items: inherit;
+    //   display: inherit;
+    //   flex-flow: row;
+    //   flex-wrap: inherit;
+    //   height: 100%;
+    //   justify-content: flex-end;
+    //   margin-bottom: $small-margin;
+    //   width: 100%;
+    // }
+
+    // @include breakpoint(mobile) {
+    //   align-items: center;
+    //   display: inherit;
+    //   flex-flow: column;
+    //   flex-wrap: wrap;
+    //   height: 100%;
+    //   justify-content: center;
+    //   width: 100%;
+    // }
+  }
+
+  @at-root input {
+    &[type="number"] {
+      -moz-appearance: textfield;
+    }
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+
+  &__wrapper {
+    // @include breakpoint(laptop) {
+    //   margin-right: $small-margin;
+    //   margin-top: $small-margin;
+
+    //   &--long {
+    //     width: $input-width-large;
+    //   }
+
+    //   &--short {
+    //     width: $input-width-short;
+    //   }
+
+    //   &--last {
+    //     margin-left: $small-margin;
+    //     margin-right: $big-margin;
+    //     // margin-top: $label-line-height + 20px;
+    //   }
+    // }
+
+    // @include breakpoint(tablet) {
+    //   margin-right: $small-margin;
+    //   margin-top: $small-margin;
+
+    //   &--long {
+    //     width: $input-width-large;
+    //   }
+
+    //   &--short {
+    //     width: $input-width-short;
+    //   }
+
+    //   &--last {
+    //     margin-left: $small-margin;
+    //     margin-right: $big-margin;
+    //   }
+    // }
+
+    // @include breakpoint(mobile) {
+    //   margin-right: 0;
+    //   margin-top: 0;
+
+    //   &--long,
+    //   &--short {
+    //     width: 80%;
+    //   }
+
+    //   &--last {
+    //     margin-left: 0;
+    //     margin-right: 0;
+    //   }
+    // }
+  }
+
+  &__label {
+    color: hsla(0, 0, 0, 0.6);
+    display: block;
+    font-family: "Inconsolata", Serif, serif;
+    font-size: 0.5em;
+    font-weight: bold;
+    // letter-spacing: 1px;
+    line-height: 9px;
+    margin-bottom: 5px;
+    // margin-top: $small-margin;
+    text-align: left;
+    text-shadow: none;
+    width: 100%;
+
+    &--first {
+      margin-top: $big-margin;
+    }
+  }
+
+  &__select {
+    @extend .cc-form__input;
+    appearance: listbox;
+  }
+
+  &__input {
+    border: 1px solid hsla(0, 0, 0, 0.3);
+    border-radius: 5px;
+    box-shadow: inset 0 1px 4px hsla(0, 0, 0, 0.2);
+    color: hsl(0, 0, 20);
+    display: block;
+    font-size: $input-font-size;
+    // height: $input-height;
+    height: 2rem;
+    margin: 0;
+    outline: none;
+    padding: 0;
+    text-align: left;
+    width: 100%;
+
+    &--transparent {
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+      margin-top: -0.7rem;
+    }
+
+    &--tckn {
+      color: $card-font-colour;
+      font-family: "Inconsolata", monospace;
+      font-size: 1rem;
+      color: black;
+      // @include breakpoint(tablet) {
+      //   font-size: $cc-font-size-medium;
+      // }
+
+      // @include breakpoint(mobile) {
+      //   font-size: $cc-font-size-big;
+      // }
+    }
+
+    &--floatingInput {
+      color: $card-font-colour;
+      float: left;
+      font-family: "Inconsolata", monospace;
+      font-size: 1rem;
+      color: black;
+      // @include breakpoint(tablet) {
+      //   font-size: $cc-font-size-medium;
+      // }
+
+      // @include breakpoint(mobile) {
+      //   font-size: $cc-font-size-big;
+      // }
+    }
+
+    &--embosed {
+      color: $card-font-colour;
+      font-family: "Inconsolata", monospace;
+      font-size: $cc-font-size;
+      text-shadow: 0 2px 1px hsla(0, 0, 0, 0.3);
+
+      // @include breakpoint(tablet) {
+      //   font-size: $cc-font-size-medium;
+      // }
+
+      // @include breakpoint(mobile) {
+      //   font-size: $cc-font-size-big;
+      // }
+    }
+
+    &--cursive {
+      font-size: $label-font-size-normal;
+      font-style: italic;
+      left: 0;
+      margin: 0 auto;
+      position: absolute;
+    }
+
+    &--right-align {
+      padding-right: $small-margin;
+      text-align: right;
+    }
+
+    &--left-align {
+      text-align: left;
+    }
+
+    &:focus {
+      border-color: $input-focus-border-colour;
+    }
+  }
+
+  &__error {
+    color: $card-font-invalid-colour;
+    font-size: $label-font-size-normal;
+  }
+
+  &__button {
+    background: $input-focus-border-colour;
+    border: 0;
+    border-radius: $small-radius;
+    color: $card-font-colour;
+    cursor: pointer;
+    margin-bottom: $small-margin;
+    margin-top: $small-padding;
+    outline: 0;
+    overflow: hidden;
+    padding: $small-padding;
+    position: relative;
+    text-align: center;
+    user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    width: $input-width-large;
+
+    &:hover {
+      box-shadow: 0 6px 8px -3px rgba(0, 0, 0, 0.3);
+    }
+
+    &:focus {
+      background: darken($input-focus-border-colour, 12%);
+    }
+
+    &--ripple {
+      overflow: hidden;
+      position: relative;
+
+      &:after {
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 80%;
+        content: "";
+        display: block;
+        height: 120px;
+        left: 50%;
+        margin-left: -50%;
+        margin-top: -60px;
+        position: absolute;
+        top: 50%;
+        transform: scale(0);
+        width: 100%;
+      }
+
+      &:not(:active):after {
+        animation: button-ripple 2s ease-out;
+      }
+    }
+
+    @keyframes button-ripple {
+      0% {
+        transform: scale(0);
+      }
+      20% {
+        transform: scale(1);
+      }
+      100% {
+        opacity: 0;
+        transform: scale(1);
+      }
+    }
+  }
+}
+
+.cc-wrapper {
+  background-color: $wrapper-background;
+  border-radius: $wrapper-radius;
+  height: 100%;
+  margin: 0;
+  margin-top: 6rem;
+  padding: 0;
+  width: 100%;
+}
+
+.cc-box {
+  height: $card-height;
+  margin: 0 auto;
+  padding: 0;
+  position: relative;
+  transform: translateY(-100%);
+  transform: scale3d(1.5, 1.5, 1.5);
+  // width: $card-width;
+  width: 30rem;
+  z-index: 1;
+
+  // @include breakpoint(tablet) {
+  //   transform: translateY(-115%);
+  // }
+
+  // @include breakpoint(mobile) {
+  //   transform: translateY(-130%);
+  // }
+
+  &--flip {
+    // transform-style: preserve-3d;
+    // transition: 1s;
+    width: 16vw;
+    height: 19vh;
+    // &:hover,
+    // &.hover {
+    //   transform: rotateY(180deg);
+    // }
+  }
+
+  &__element {
+    padding: 0;
+    width: 93%;
+    margin-bottom: -0.5rem;
+  }
+
+  &__logo {
+    align-items: center;
+    color: $card-font-colour;
+    display: flex;
+    flex-flow: row nowrap;
+    font-size: $input-font-size;
+    font-style: italic;
+    font-weight: bold;
+    justify-content: flex-end;
+    margin-right: $medium-margin;
+    width: 100%;
+  }
+
+  &__strip {
+    background: linear-gradient(135deg, hsl(0, 0, 25%), hsl(0, 0, 10%));
+    font-size: $strip-font-size;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    transform: translateY(-90%);
+    width: 100%;
+  }
+
+  &__front {
+    align-items: center;
+    backface-visibility: hidden;
+    background-image: url("../../assets/front.png");
+    border-radius: 15px;
+    display: flow-root;
+    flex-direction: column;
+    flex-flow: column nowrap;
+    height: 21rem;
+    justify-content: center;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 33rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  &__back {
+    align-items: center;
+    backface-visibility: hidden;
+    background-image: url("../../assets/back.png");
+    border-radius: 15px;
+    display: flow-root;
+    flex-direction: column;
+    flex-flow: column nowrap;
+    height: 21rem;
+    justify-content: center;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 33rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &__front {
+    transform: rotateY(0deg);
+  }
+
+  &__back {
+    transform: rotateY(180deg);
+  }
+}
+
+.ng-invalid {
+  &.ng-touched {
+    border-color: $card-font-invalid-colour;
+  }
+}
+
+.ng-valid {
+  &.ng-touched {
+    border-color: $input-border-color;
+  }
+}
+
+.photo {
+  height: 12rem;
+  width: 10rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: 0 0 0 -.8rem;
+}
+
+.signature-photo {
+  height: 2rem;
+  width: 8rem;
+  margin: -1rem 0 0 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.front-wrapper {
+  margin: 5rem 0 0 2.5rem;
+}
+
+.back-wrapper {
+  margin-top: 4rem;
+}
+
+.mrz-area {
+  margin-top: 7rem;
+  text-align-last: justify;
+  margin-left: 1rem;
+}
+
+.back-fields-area {
+  text-align: center;
+  margin-left: 9.5rem;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
