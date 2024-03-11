@@ -1,27 +1,53 @@
-# CardVisualizer
+Introduction:
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.1.
+Card Visualizer is an Angular TS project that aims to visualize an identity card. This guide provides information on the project's setup, usage, and customization.
 
-## Development server
+Setup:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Clone the project from GitHub:
+git clone https://github.com/Hioheka/card-visualizer.git
+Enter the project:
+cd card-visualizer
+Install the project's npm modules:
+npm install
+Run the project:
+ng serve
+Usage:
 
-## Code scaffolding
+Once the project is running, open localhost:4200 in your browser.
+Enter the information from your identity card in the "Card Information" field.
+Click the "Visualize" button.
+Customization:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+You can customize the project's visualization options by changing the styles variable in the app.component.ts file.
+You can change the color, font, and size of the visualization by changing the CSS properties in this variable.
+Example:
 
-## Build
+const styles = {
+  card: {
+    backgroundColor: '#ffffff',
+    color: '#000000',
+    fontSize: '16px',
+    fontFamily: 'Arial',
+  },
+  ...
+};
+Notes:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+This guide describes the basic usage of the project. For more information, you can refer to the project's code.
+I plan to continue developing the project. Stay tuned for new features and improvements.
+Troubleshooting:
 
-## Running unit tests
+If you encounter any problems, please report them to me by opening an issue on GitHub.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Thanks:
 
-## Running end-to-end tests
+Thanks for using this project! I hope you like it.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Improvement Notes:
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Added a brief introduction to the project.
+Clarified the instructions for setup, usage, and customization.
+Added examples for customization.
+Added notes and troubleshooting information.
+Updated the license information.
