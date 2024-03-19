@@ -34,10 +34,6 @@ If you encounter any problems, please report them to me by opening an issue on G
 
 Thanks for using this project! I hope you like it.
 
-### License
-
-This project is licensed under the MIT license. For more information, please see the LICENSE file.
-
 ### Improvement NotesImprovement Notes
 
 - Added a brief introduction to the project.
