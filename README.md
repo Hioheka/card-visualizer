@@ -1,3 +1,7 @@
+#Result
+
+![Animation](https://github.com/Hioheka/card-visualizer/assets/29397658/d2488bea-abc4-4c36-9370-d06b2b50694e)
+
 # Introduction
 
 Card Visualizer is an Angular TS project that aims to visualize an identity card. This guide provides information on the project's setup, usage, and customization.
